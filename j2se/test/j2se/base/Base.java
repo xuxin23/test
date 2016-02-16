@@ -42,4 +42,36 @@ public class Base {
 		short s2 = 1;
 		s2 += 1;
 	}
+	
+	@Test
+	public void test05() {
+		String str = "hello,…œ∫£";
+		byte[] b = str.getBytes();
+		for (byte e:b) {
+			System.out.print(e + " ");
+		}
+		System.out.println();
+		
+		char[] c = str.toCharArray();
+		for (char e:c) {
+			System.out.println(e + "[" + (int)e + "]");
+		}
+	}
+	
+	@Test
+	public void test06() {
+		System.out.println(finallyTest());
+	}
+	
+	private int finallyTest() {
+		int i = 1;
+		try {
+			System.out.println("try:" + i);
+			return i;
+		}
+		finally {
+			++i;
+			System.out.println("finally:" + i);
+		}
+	}
 }
